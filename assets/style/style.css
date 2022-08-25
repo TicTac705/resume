@@ -1,0 +1,261 @@
+body {
+    background-color: rgba(248, 249, 250, 1);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    color: #000;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    min-width: 650px;
+    margin: 0 auto;
+}
+
+header {
+    color: #fff;
+    padding-top: 30px;
+}
+
+.shadow {
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.header__blocks, .contacts__blocks, .content__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #619fcc;
+    border-radius: 15px 15px 15px 15px;
+    padding: 15px 10px 15px 10px;
+}
+
+.header__block--left {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__block--right {
+}
+
+.header__title {
+    margin-bottom: 5px;
+    font-family: 'Impact', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    border-bottom: 5px solid #382C28;
+}
+
+.header__subtitle, .block__caption {
+    margin: 0 0 0 10px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header__description {
+    margin: 0 0 0 10px;
+}
+
+.header__list {
+    float: left;
+    list-style: none;
+    padding: 0;
+}
+
+.header__list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #382C28;
+}
+
+.header__list li span {
+    margin-right: 3px;
+    font-weight: bold;
+}
+
+.header__list li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__list li a:hover {
+    text-decoration: underline;
+}
+
+.ava {
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background: url(../img/ava.jpg) no-repeat 0 0;
+    background-size: auto 200px;
+    border: 2px solid #382C28;
+}
+
+.content__block {
+    align-items: stretch;
+    margin: 30px 0;
+    background-color: #fff;
+}
+
+.content__block:first-child {
+    margin-top: 0;
+}
+
+.content__block--left {
+    width: 30%;
+    border-right: 1px solid #619fcc;
+}
+
+.block__caption {
+    display: flex;
+    align-items: center;
+}
+
+.content__block--right {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding-left: 10px;
+}
+
+.content__block--right hr {
+    float: left;
+    border: 0;
+    border-bottom: 2px solid #382C28;
+    width: 45%;
+    margin: 5px 0 10px 0;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.item__title {
+    color: #619fcc;
+}
+
+.item__subtitle {
+    color: gray;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.item__content {
+    margin-top: 5px;
+}
+
+.item__content h3 {
+    font-weight: normal;
+    margin-bottom: 3px;
+}
+
+.item__content p {
+    margin-top: 0;
+}
+
+.item__content ul {
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+.item__content li::marker {
+    color: #619fcc;
+}
+
+.contacts, .content {
+    padding-top: 30px;
+}
+
+.contacts__blocks {
+    background-color: #fff;
+    justify-content: space-around;
+}
+
+a.btn-shadow {
+    box-shadow: 0 0 8px 2px rgba(221, 221, 221, 1);
+}
+
+a.btn {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid gray;
+    color: #000;
+    text-decoration: none;
+    user-select: none;
+    background-color: rgb(248, 249, 250);
+    padding: .5em 1em;
+    outline: none;
+}
+
+a.btn:hover {
+    background: rgb(206, 206, 206);
+}
+
+a.btn:active {
+    background: rgb(192, 192, 192);
+}
+
+/* ICONS */
+
+i.ico {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+
+i.ico--big {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+i.ico-telegram {
+    background: url("../img/icons/telegram.png") no-repeat;
+}
+
+i.ico-skype {
+    background: url("../img/icons/skype.png") no-repeat;
+}
+
+i.ico-birthday {
+    background: url("../img/icons/cake.png") no-repeat;
+}
+
+i.ico-city {
+    background: url("../img/icons/buildings.png") no-repeat;
+}
+
+i.ico-mail {
+    background: url("../img/icons/email.png") no-repeat;
+}
+
+i.ico-education {
+    background: url("../img/icons/education.png") no-repeat;
+}
+
+i.ico-work {
+    background: url("../img/icons/work-time.png") no-repeat;
+}
+
+i.ico-about-myself {
+    background: url("../img/icons/idea.png") no-repeat;
+}
+
+i.ico-github {
+    background: url("../img/icons/github.png") no-repeat;
+}
+
+i.ico-github, i.ico-work, i.ico-education, i.ico-mail, i.ico-city, i.ico-birthday, i.ico-skype, i.ico-telegram, i.ico-about-myself {
+    background-size: cover;
+}
