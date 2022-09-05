@@ -1,34 +1,42 @@
 body {
     background-color: rgba(248, 249, 250, 1);
+
+    /*Rubik нестандартный шрифт полагаю, его надо подключать*/
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
     color: #000;
 }
 
+/*h5,h6 идут лесом полагаю (нет)*/
 h1, h2, h3, h4 {
     margin: 0;
 }
 
+/*это почти хорошо, но что делать если размер экрана меньше 650px*/
 .container {
     max-width: 1000px;
     min-width: 650px;
     margin: 0 auto;
 }
 
+/*а здесь на БЭМ забил? назови хотя бы .general-header*/
 header {
     color: #fff;
     padding-top: 30px;
 }
 
 .shadow {
+    /*принято писать почти всё в hex, т.е. #ddd в данном случае*/
     box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
 }
 
+/*вместо такого перечисления блоков создать один .block*/
 .header__blocks, .contacts__blocks, .content__block {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #619fcc;
+
     border-radius: 15px 15px 15px 15px;
     padding: 15px 10px 15px 10px;
 }
@@ -57,10 +65,14 @@ header {
 }
 
 .header__description {
+    /**
+        margin-left: 10px ?
+     */
     margin: 0 0 0 10px;
 }
 
 .header__list {
+    /*вижу много флексов, флоаты зачем именно здесь?*/
     float: left;
     list-style: none;
     padding: 0;
@@ -92,7 +104,10 @@ header {
     height: 150px;
     margin-right: 20px;
     border-radius: 50%;
+    /*много весит картинка, всю оптимизацию сайта прибил одной ей*/
     background: url(../img/ava.jpg) no-repeat 0 0;
+
+    /*ну вот ещё, сколько изощрений, это точно <img> т.к. контентная картинка*/
     background-size: auto 200px;
     border: 2px solid #382C28;
 }
@@ -124,6 +139,7 @@ header {
     padding-left: 10px;
 }
 
+/*это плохо сделал, по сути это обычный border-bottom, который можно через :after сделать, hr здесь не нужен*/
 .content__block--right hr {
     float: left;
     border: 0;
@@ -132,6 +148,7 @@ header {
     margin: 5px 0 10px 0;
 }
 
+/*не, масло маслянное, ты можешь удалить этот стиль - ничего не поменяется*/
 .item {
     display: flex;
     flex-direction: column;
@@ -179,6 +196,7 @@ header {
     justify-content: space-around;
 }
 
+/*здесь и дальше по коду ниже маниакальное увлечение rgb, а в стилях используют hex за редким исключением*/
 a.btn-shadow {
     box-shadow: 0 0 8px 2px rgba(221, 221, 221, 1);
 }
@@ -205,7 +223,9 @@ a.btn:active {
 }
 
 /* ICONS */
-
+/**
+    i тег перед .ico не имеет смысла, лишнее
+ */
 i.ico {
     float: left;
     width: 20px;
@@ -217,6 +237,11 @@ i.ico--big {
     float: left;
     width: 40px;
     height: 40px;
+    /**
+        эта вещь скорее всего максимальна неочевидна, но является грубым нарушением того как стоит верстать,
+        по сути ты просто создал отступ вправо, ожидая что справа будет хоть что-то, это так не работает.
+        Отступ margin точно возможен только внутри блока между элементами без исключений
+     */
     margin-right: 8px;
 }
 
@@ -256,6 +281,9 @@ i.ico-github {
     background: url("../img/icons/github.png") no-repeat;
 }
 
+/**
+ну такое, как насчёт дать .ico классу это свойство?
+ */
 i.ico-github, i.ico-work, i.ico-education, i.ico-mail, i.ico-city, i.ico-birthday, i.ico-skype, i.ico-telegram, i.ico-about-myself {
     background-size: cover;
 }
