@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?k3vsrn');
+  src:  url('../fonts/icomoon.eot?k3vsrn#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?k3vsrn') format('truetype'),
+    url('../fonts/icomoon.woff?k3vsrn') format('woff'),
+    url('../fonts/icomoon.svg?k3vsrn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+  content: "\e900";
+}
+.icon-mail-dot-ru:before {
+  content: "\e901";
+  color: #168de2;
+}
+.icon-skype:before {
+  content: "\e902";
+  color: #00aff0;
+}
+.icon-telegram:before {
+  content: "\e903";
+  color: #2ca5e0;
+}

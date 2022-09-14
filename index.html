@@ -1,151 +1,146 @@
 <!DOCTYPE html>
-<!--lang=ru, контент же на русском, какой-нить хром выдаст мол перевести эту страницу, запросто может-->
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik'>
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
     <link rel="stylesheet" href="./assets/style/normalize.css">
     <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/icons.css">
 
-<!--    раз решил поддерживать не просто иконку но и все её производные, то-->
-<!--    лучше использовать что-то вроде-->
-<!--    https://favicon.io/-->
-<!--    там нагенерится вообще всё что нужно-->
     <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon"/>
 
     <title>Резюме</title>
 </head>
 
 <body>
-<header class="header">
-    <div class="container">
-        <div class="header__blocks shadow">
-
-<!--            плохое именование классов, ты можешь поменять компоновку и то что слева по вёрстке окажется справа,-->
-<!--            т.е. должно быть либо .columns либо .sidebar+.main и т.д.-->
-
-<!--            ещё вижу хоть и применение бэм, но некорректное, здесь не нужен модификатор-->
-<!--            это обычный элемент внутри блока, что-то вроде .header__general и .header__additional-->
-            <div class="header__block--left">
-                <h1 class="header__title">Гераськин Вячеслав Михайлович</h1>
-                <h2 class="header__subtitle">Frontend developer</h2>
-                <div class="header__description">
-
-<!--                    не, плохо, у тебя такой же список запросто может оказаться вне .header, т.е. надо именовать блок-->
-<!--                    вне зависимости от его расположения-->
-
-<!--                    идея выбора ul>li здесь плохая, это dl dt dd исходя из контента-->
-                    <ul class="header__list">
-<!--                        однострочное форматирование нескольких тегов всегда выглядит плохо,
-                            к чему такая экономия места? так сложнее читать-->
-                        <li><i class="ico ico-birthday"></i><span>Дата рождения:</span>29.05.1997</li>
-                        <li><i class="ico ico-city"></i><span>Город:</span>Саранск</li>
-                    </ul>
-                </div>
+<header class="main-header container">
+    <div class="columns block shadow">
+        <div class="column__general">
+            <h1 class="column__title">Гераськин Вячеслав Михайлович</h1>
+            <h2 class="column__subtitle">Frontend developer</h2>
+            <div class="column__description">
+                <!-- идея выбора ul>li здесь плохая, это dl dt dd исходя из контента -->
+                <!-- Не получилось стилизовать dl dt dd так же как получилось с ul li -->
+                <ul class="features">
+                    <li>
+                        <span class="lnr lnr-gift"></span>
+                        <span class="text-bold">Дата рождения: </span>29.05.1997
+                    </li>
+                    <li>
+                        <span class="lnr lnr-apartment"></span>
+                        <span class="text-bold">Город: </span>Саранск
+                    </li>
+                </ul>
             </div>
-            <div class="header__block--right">
-<!--                мимо, так никогда не делают, это самый настоящий img тег, а не фоновая картинка, здесь потеря в семантике-->
-                <div class="ava"></div>
+            <div class="contacts">
+                <a class="btn" href="mailto:geraskin.slava@mail.ru" target="_blank" title="Skype">
+                    <span class="icon-mail-dot-ru"></span>
+                </a>
+                <a class="btn" href="https://t.me/TicTac705" target="_blank" title="Telegram">
+                    <span class="icon-telegram"></span>
+                </a>
+                <a class="btn" href="skype:slava123529?chat" target="_blank" title="Skype">
+                    <span class="icon-skype"></span>
+                </a>
+                <a class="btn" href="https://github.com/TicTac705" target="_blank" title="GitHub">
+                    <span class="icon-github"></span>
+                </a>
+            </div>
+        </div>
+        <div class="column__additional">
+            <div class="photo">
+                <img src="./assets/img/photo.jpg" alt="Фотография">
             </div>
         </div>
     </div>
 </header>
 
-<section class="contacts">
-<!--    я не вижу причин почему нельзя было написать <section class="contacts container">-->
-<!--    так ты получил лишнюю вложенность без нужных на то причин-->
-    <div class="container">
-        <div class="contacts__blocks shadow">
-            <!--                        идея с иконками норм, хотя ещё лучше будет использовать icomoon генератор, погугли-->
-            <a class="btn btn-shadow" href="mailto:geraskin.slava@mail.ru" target="_blank" title="Skype"><i class="ico ico-mail"></i>Email</a>
-            <a class="btn btn-shadow" href="https://t.me/TicTac705" target="_blank" title="Telegram"><i class="ico ico-telegram"></i>Telegram</a>
-            <a class="btn btn-shadow" href="skype:slava123529?chat" target="_blank" title="Skype"><i class="ico ico-skype"></i>Skype</a>
-            <a class="btn btn-shadow" href="https://github.com/TicTac705" target="_blank" title="GitHub"><i class="ico ico-github"></i>GitHub</a>
+<main class="content container">
+    <section class="content__row block shadow">
+        <div class="content__cell content__cell_w_3">
+            <h3 class="content__caption">
+                <span class="lnr lnr--big lnr-graduation-hat"></span>&nbsp;Образование
+            </h3>
         </div>
-    </div>
-</section>
+        <div class="content__cell content__cell_w_7">
+            <div class="summary-item">
+                <h3 class="summary-item__title">Фундаментальная Информатика и Информационные технологии</h3>
+                <div class="summary-item__subtitle">09/2017 - 06/2021</div>
+                <div class="summary-item__content">
+                    <h3><b>Факультет Математики и Информационных Технологий, МГУ им. Н. П. Огарева, Саранск</b></h3>
+                    <h3>Бакалавр</h3>
+                </div>
+            </div>
+            <div class="summary-item">
+                <h3 class="summary-item__title">Программирование в компьютерных системах</h3>
+                <div class="summary-item__subtitle">09/2013 - 06/2017</div>
+                <div class="summary-item__content">
+                    <h3><b>Ковылкинский филиал (СПО), Ковылкинский филиал ФГБОУ ВО "НИ МГУ им. Н. П. Огарева",
+                        Ковылкино</b></h3>
+                    <h3>СПО</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="content container">
-    <div class="content__column"></div>
-    <div class="content__column"></div>
-</section>
+    <section class="content__row block shadow">
+        <div class="content__cell content__cell_w_3">
+            <h3 class="content__caption">
+                <span class="lnr lnr--big lnr-license"></span>&nbsp;Опыт работы
+            </h3>
+        </div>
+        <div class="content__cell content__cell_w_7">
+            <div class="summary-item">
+                <h3 class="summary-item__title">PHP-программист</h3>
+                <div class="summary-item__subtitle">07/2022 - текущее время</div>
+                <div class="summary-item__content">
+                    <h3><b>Codemasters, Саранск</b></h3>
+                </div>
+            </div>
+            <div class="summary-item">
+                <h3 class="summary-item__title">Программист</h3>
+                <div class="summary-item__subtitle">06/2021 - 06/2022</div>
+                <div class="summary-item__content">
+                    <h3><b>ООО "Интернет технологии успеха", Саранск</b></h3>
+                    <p>Работал с CMS'ками 1C:Bitrix и Wordpress. Добавлял что-то новое, вносил правки. Создавал
+                        однастраничные сайты (на Wordpress).</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="content">
-    <div class="container">
-        <article class="content__block shadow">
-<!--            здесь у тебя по БЭМ элемент элемента получился, что неверно, даже если ты и оформил это как модификатор-->
-            <div class="content__block--left">
-                <h3 class="block__caption"><i class="ico--big ico-education"></i>Образование</h3>
-            </div>
-            <div class="content__block--right">
-<!--                item слишком общее имя для всего и сразу, например summary-record / summary-item точнее-->
-                <div class="item">
-                    <h3 class="item__title">Фундаментальная Информатика и Информационные технологии</h3>
-<!--                    это не заголовок, а дата, обычный div-->
-                    <h4 class="item__subtitle">09/2017 - 06/2021</h4>
-                    <div class="item__content">
-                        <h3><b>Факультет Математики и Информационных Технологий, МГУ им. Н. П. Огарева, Саранск</b></h3>
-                        <h3>Бакалавр</h3>
-                    </div>
-                </div>
-                <hr>
-                <div class="item">
-                    <h3 class="item__title">Программирование в компьютерных системах</h3>
-                    <h4 class="item__subtitle">09/2013 - 06/2017</h4>
-                    <div class="item__content">
-                        <h3><b>Ковылкинский филиал (СПО), Ковылкинский филиал ФГБОУ ВО "НИ МГУ им. Н. П. Огарева", Ковылкино</b></h3>
-                        <h3>СПО</h3>
-                    </div>
+    <section class="content__row block shadow">
+        <div class="content__cell content__cell_w_3">
+            <h3 class="content__caption">
+                <span class="lnr lnr--big lnr-user"></span>&nbsp;О себе
+            </h3>
+        </div>
+        <div class="content__cell content__cell_w_7">
+            <div class="summary-item">
+                <div class="summary-item__content">
+                    <ul>
+                        <li>
+                            В этом году прошел курс обучения по программе "Разработка на PHP" -
+                            <a href="./assets/img/certificate.jpg" target="_blank">Сертификат</a>
+                        </li>
+                        <li>Уровень знания английского - Google Translate ☺</li>
+                        <li>
+                            Про существование курса знал и раньше из университета, а о старте набора в этом году узнал
+                            из рабочей беседы.
+                        </li>
+                        <li>Целью моего посещения курса - научиться правильно разрабатывать веб приложения.</li>
+                    </ul>
                 </div>
             </div>
-        </article>
-
-        <article class="content__block shadow">
-            <div class="content__block--left">
-                <h3 class="block__caption"><i class="ico--big ico-work"></i>Опыт работы</h3>
-            </div>
-            <div class="content__block--right">
-                <div class="item">
-                    <h3 class="item__title">PHP-программист</h3>
-                    <h4 class="item__subtitle">07/2022 - текущее время</h4>
-                    <div class="item__content">
-                        <h3><b>Codemasters, Саранск</b></h3>
-                    </div>
-                </div>
-                <hr>
-                <div class="item">
-                    <h3 class="item__title">Программист</h3>
-                    <h4 class="item__subtitle">06/2021 - 06/2022</h4>
-                    <div class="item__content">
-                        <h3><b>ООО "Интернет технологии успеха", Саранск</b></h3>
-                        <p>Работал с CMS'ками 1C:Bitrix и Wordpress. Добавлял что-то новое, вносил правки. Создавал однастраничные сайты (на Wordpress).</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="content__block shadow">
-            <div class="content__block--left">
-                <h3 class="block__caption"><i class="ico--big ico-about-myself"></i>О себе</h3>
-            </div>
-            <div class="content__block--right">
-                <div class="item">
-                    <div class="item__content">
-<!--                        я думаю это скорее ul li список, а не параграфы, хотя в целом параграфы здесь терпимы -->
-                        <p>В этом году прошел курс обучения по программе "Разработка на PHP" - <a href="./assets/img/certificate.jpg" target="_blank">Сертификат</a></p>
-                        <p>Уровень знания английского - Google Translate ☺</p>
-                        <p>Про существование курса знал и раньше из университета, а о старте набора в этом году узнал из рабочей беседы.</p>
-                        <p>Целью моего посещения курса - научиться правильно разрабатывать веб приложения.</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </div>
-</section>
+        </div>
+    </section>
+</main>
 </body>
 
 </html>

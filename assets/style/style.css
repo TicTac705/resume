@@ -1,55 +1,52 @@
 body {
-    background-color: rgba(248, 249, 250, 1);
-
-    /*Rubik нестандартный шрифт полагаю, его надо подключать*/
-    font-family: 'Rubik', sans-serif;
+    background-color: #f8f9fa;
+    font-family: 'Rubik', 'Arial', sans-serif;
     font-size: 16px;
     color: #000;
 }
 
-/*h5,h6 идут лесом полагаю (нет)*/
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-/*это почти хорошо, но что делать если размер экрана меньше 650px*/
 .container {
+    min-width: 300px;
     max-width: 1000px;
-    min-width: 650px;
     margin: 0 auto;
 }
 
-/*а здесь на БЭМ забил? назови хотя бы .general-header*/
-header {
+.main-header {
     color: #fff;
     padding-top: 30px;
 }
 
 .shadow {
-    /*принято писать почти всё в hex, т.е. #ddd в данном случае*/
-    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    box-shadow: 0 0 10px 5px #ddd;
 }
 
-/*вместо такого перечисления блоков создать один .block*/
-.header__blocks, .contacts__blocks, .content__block {
+.text-bold {
+    font-weight: bold;
+}
+
+
+.block {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #619fcc;
-
     border-radius: 15px 15px 15px 15px;
     padding: 15px 10px 15px 10px;
 }
 
-.header__block--left {
+.column__general {
     display: flex;
     flex-direction: column;
 }
 
-.header__block--right {
+.column__additional {
 }
 
-.header__title {
+.column__title {
     margin-bottom: 5px;
     font-family: 'Impact', sans-serif;
     font-size: 32px;
@@ -57,233 +54,254 @@ header {
     border-bottom: 5px solid #382C28;
 }
 
-.header__subtitle, .block__caption {
+.column__subtitle, .content__caption {
     margin: 0 0 0 10px;
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 600;
 }
 
-.header__description {
-    /**
-        margin-left: 10px ?
-     */
-    margin: 0 0 0 10px;
+.column__description {
+    margin-left: 10px;
 }
 
-.header__list {
+.features {
     /*вижу много флексов, флоаты зачем именно здесь?*/
+
+    /*float здесь я указал для того, чтобы border-bottom, в классе ниже, равнялся по контенту в блоке ul.*/
+    /*на мой взгляд так красивее выглядит =)*/
     float: left;
     list-style: none;
     padding: 0;
 }
 
-.header__list li {
-    display: flex;
-    align-items: center;
+.features li {
     margin-bottom: 8px;
-    border-bottom: 1px solid #382C28;
+    border-bottom: .1em solid #382C28;
 }
 
-.header__list li span {
-    margin-right: 3px;
-    font-weight: bold;
-}
-
-.header__list li a {
+.features li a {
     text-decoration: none;
     color: #fff;
 }
 
-.header__list li a:hover {
+.features li a:hover {
     text-decoration: underline;
 }
 
-.ava {
+.contacts {
+    margin-left: 5px;
+}
+
+.photo {
     width: 150px;
     height: 150px;
     margin-right: 20px;
     border-radius: 50%;
-    /*много весит картинка, всю оптимизацию сайта прибил одной ей*/
-    background: url(../img/ava.jpg) no-repeat 0 0;
-
-    /*ну вот ещё, сколько изощрений, это точно <img> т.к. контентная картинка*/
-    background-size: auto 200px;
     border: 2px solid #382C28;
+    overflow: hidden;
 }
 
-.content__block {
+.photo img {
+    width: 100%;
+    height: auto;
+}
+
+.content__row {
     align-items: stretch;
     margin: 30px 0;
     background-color: #fff;
 }
 
-.content__block:first-child {
+.content__row:first-child {
     margin-top: 0;
 }
 
-.content__block--left {
+.content__cell_w_3 {
     width: 30%;
-    border-right: 1px solid #619fcc;
 }
 
-.block__caption {
+.content__cell_w_7 {
+    width: 70%;
+}
+
+.content__cell {
+    border-right: 1px solid #619fcc;
+    padding-left: 10px;
+}
+
+.content__cell:first-of-type {
+    padding: 0;
+}
+
+.content__cell:last-of-type {
+    border: none;
+}
+
+.content__caption {
     display: flex;
     align-items: center;
 }
 
-.content__block--right {
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    padding-left: 10px;
-}
-
-/*это плохо сделал, по сути это обычный border-bottom, который можно через :after сделать, hr здесь не нужен*/
-.content__block--right hr {
-    float: left;
-    border: 0;
-    border-bottom: 2px solid #382C28;
+.summary-item:after {
+    content: '';
+    display: block;
     width: 45%;
     margin: 5px 0 10px 0;
+    border-bottom: 2px solid #382C28;
 }
 
-/*не, масло маслянное, ты можешь удалить этот стиль - ничего не поменяется*/
-.item {
-    display: flex;
-    flex-direction: column;
-
+.summary-item:last-of-type:after {
+    content: none;
 }
 
-.item__title {
+.summary-item__title {
     color: #619fcc;
 }
 
-.item__subtitle {
+.summary-item__subtitle {
     color: gray;
     font-weight: 400;
     font-size: 14px;
 }
 
-.item__content {
+.summary-item__content {
     margin-top: 5px;
 }
 
-.item__content h3 {
+.summary-item__content h3 {
     font-weight: normal;
     margin-bottom: 3px;
 }
 
-.item__content p {
+.summary-item__content p {
     margin-top: 0;
 }
 
-.item__content ul {
+.summary-item__content ul {
     margin-top: 0;
     padding-left: 20px;
 }
 
-.item__content li::marker {
+.summary-item__content li::marker {
     color: #619fcc;
 }
 
-.contacts, .content {
+.content {
     padding-top: 30px;
 }
 
-.contacts__blocks {
-    background-color: #fff;
-    justify-content: space-around;
-}
-
-/*здесь и дальше по коду ниже маниакальное увлечение rgb, а в стилях используют hex за редким исключением*/
-a.btn-shadow {
-    box-shadow: 0 0 8px 2px rgba(221, 221, 221, 1);
-}
-
 a.btn {
-    display: flex;
-    align-items: center;
+    float: left;
     border-radius: 5px;
     border: 1px solid gray;
     color: #000;
     text-decoration: none;
     user-select: none;
-    background-color: rgb(248, 249, 250);
-    padding: .5em 1em;
+    background-color: #f8f9fa;
+    padding: .3em .3em;
     outline: none;
+    line-height:0;
+    margin: 0 5px;
 }
 
 a.btn:hover {
-    background: rgb(206, 206, 206);
+    background: #cecece;
 }
 
 a.btn:active {
-    background: rgb(192, 192, 192);
+    background: #c0c0c0;
 }
 
 /* ICONS */
-/**
-    i тег перед .ico не имеет смысла, лишнее
- */
-i.ico {
-    float: left;
-    width: 20px;
-    height: 20px;
-    margin-right: 4px;
+.lnr {
+    color: #382C28;
+    font-weight: bold;
 }
 
-i.ico--big {
-    float: left;
-    width: 40px;
-    height: 40px;
-    /**
-        эта вещь скорее всего максимальна неочевидна, но является грубым нарушением того как стоит верстать,
-        по сути ты просто создал отступ вправо, ожидая что справа будет хоть что-то, это так не работает.
-        Отступ margin точно возможен только внутри блока между элементами без исключений
-     */
-    margin-right: 8px;
+.lnr--big {
+    font-size: 24px;
 }
 
-i.ico-telegram {
-    background: url("../img/icons/telegram.png") no-repeat;
-}
+@media screen and (max-width: 649px) {
+    .shadow {
+        box-shadow: none;
+    }
 
-i.ico-skype {
-    background: url("../img/icons/skype.png") no-repeat;
-}
+    .main-header {
+        padding-top: 0;
+    }
 
-i.ico-birthday {
-    background: url("../img/icons/cake.png") no-repeat;
-}
+    .block {
+        flex-direction: column;
+        border-radius: 0;
+    }
 
-i.ico-city {
-    background: url("../img/icons/buildings.png") no-repeat;
-}
+    .column__title {
+        text-align: center;
+    }
 
-i.ico-mail {
-    background: url("../img/icons/email.png") no-repeat;
-}
+    .column__subtitle, .content__caption {
+        margin: 0;
+        text-align: center;
+    }
 
-i.ico-education {
-    background: url("../img/icons/education.png") no-repeat;
-}
+    .column__description {
+        margin-left: 0;
+    }
 
-i.ico-work {
-    background: url("../img/icons/work-time.png") no-repeat;
-}
+    .features {
+        float: none;
+        text-align: center;
+    }
 
-i.ico-about-myself {
-    background: url("../img/icons/idea.png") no-repeat;
-}
+    .features li {
+        border-bottom: none;
+    }
 
-i.ico-github {
-    background: url("../img/icons/github.png") no-repeat;
-}
+    .column__additional {
+        order: -1;
+    }
 
-/**
-ну такое, как насчёт дать .ico классу это свойство?
- */
-i.ico-github, i.ico-work, i.ico-education, i.ico-mail, i.ico-city, i.ico-birthday, i.ico-skype, i.ico-telegram, i.ico-about-myself {
-    background-size: cover;
+    .contacts {
+        margin: 0 auto;
+    }
+
+    .content {
+        padding-top: 0;
+    }
+
+    .content__row {
+        margin: 0;
+    }
+
+    .content__row:last-of-type:after{
+        content: none;
+    }
+
+    .content__cell {
+        border: none;
+    }
+
+    .content__cell_w_3, .content__cell_w_7 {
+        width: auto;
+    }
+
+    .content__cell:first-of-type:after {
+        display: block;
+        content: ' ';
+        width: 80%;
+        margin: 0 auto;
+        border-bottom: 1px solid #382C28;
+    }
+
+    .content__cell:first-of-type:after {
+        margin: 10px auto;
+    }
+
+    .content__caption {
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
 }
