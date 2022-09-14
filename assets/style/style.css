@@ -5,7 +5,7 @@ body {
     color: #000;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .paragraph {
     margin: 0;
 }
 
@@ -20,6 +20,10 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 30px;
 }
 
+.general-footer {
+    padding-bottom: 20px;
+}
+
 .shadow {
     box-shadow: 0 0 10px 5px #ddd;
 }
@@ -27,7 +31,6 @@ h1, h2, h3, h4, h5, h6 {
 .text-bold {
     font-weight: bold;
 }
-
 
 .block {
     display: flex;
@@ -201,7 +204,7 @@ a.btn {
     background-color: #f8f9fa;
     padding: .3em .3em;
     outline: none;
-    line-height:0;
+    line-height: 0;
     margin: 0 5px;
 }
 
@@ -228,8 +231,8 @@ a.btn:active {
         box-shadow: none;
     }
 
-    .main-header {
-        padding-top: 0;
+    .main-header, .general-footer {
+        padding: 0;
     }
 
     .block {
@@ -275,7 +278,7 @@ a.btn:active {
         margin: 0;
     }
 
-    .content__row:last-of-type:after{
+    .content__row:last-of-type:after {
         content: none;
     }
 
