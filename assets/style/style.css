@@ -231,7 +231,7 @@ a.btn:active {
         box-shadow: none;
     }
 
-    .main-header, .general-footer {
+    .main-header, .general-footer, .content {
         padding: 0;
     }
 
@@ -249,8 +249,8 @@ a.btn:active {
         text-align: center;
     }
 
-    .column__description {
-        margin-left: 0;
+    .column__description, .content__row {
+        margin: 0;
     }
 
     .features {
@@ -268,14 +268,6 @@ a.btn:active {
 
     .contacts {
         margin: 0 auto;
-    }
-
-    .content {
-        padding-top: 0;
-    }
-
-    .content__row {
-        margin: 0;
     }
 
     .content__row:last-of-type:after {
